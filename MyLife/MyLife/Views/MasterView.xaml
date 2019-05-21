@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    
+    xmlns:vm="clr-namespace:MyLife.ViewModels"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    
+    xmlns:xamEff="clr-namespace:XamEffects;assembly=XamEffects"
+    x:Class="MyLife.Views.MasterView">
+    
+    <MasterDetailPage.Master>
+        <ContentPage Title="YouHealth">
+            
+            <!--For intellisense-->
+            <d:ContentPage.BindingContext>
+                <vm:MasterViewModel/>
+            </d:ContentPage.BindingContext>
+            
+            <ScrollView>
+                <StackLayout>
+                    <StackLayout HeightRequest="200">
+                        <Label Text="Зделайте вид, что сдесь будет какая ниубдь картинка =)"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal"
+                                 xamEff:TouchEffect.Color="Gray"
+                                 xamEff:Commands.Tap="{Binding CommandHome}">
+                        <BoxView BackgroundColor="#666" 
+                                 HeightRequest="48"
+                                 WidthRequest="48"/>
+                        <Label Text="Мой профиль"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal"
+                                 xamEff:TouchEffect.Color="Gray"
+                                 xamEff:Commands.Tap="{Binding CommandFoodDiary}">
+                        <BoxView BackgroundColor="#666" 
+                                 HeightRequest="48"
+                                 WidthRequest="48"/>
+                        <Label Text="Дневник питания"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal"
+                                 xamEff:TouchEffect.Color="Gray"
+                                 xamEff:Commands.Tap="{Binding CommandAbout}">
+                        <BoxView BackgroundColor="#666" 
+                                 HeightRequest="48"
+                                 WidthRequest="48"/>
+                        <Label Text="О программе"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal"
+                                 xamEff:TouchEffect.Color="Gray"
+                                 xamEff:Commands.Tap="{Binding CommandSettings}">
+                        <BoxView BackgroundColor="#666" 
+                                 HeightRequest="48"
+                                 WidthRequest="48"/>
+                        <Label Text="Настройки"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal"
+                                 xamEff:TouchEffect.Color="Gray"
+                                 xamEff:Commands.Tap="{Binding CommandLogout}">
+                        <BoxView BackgroundColor="#666" 
+                                 HeightRequest="48"
+                                 WidthRequest="48"/>
+                        <Label Text="Выйти из профиля"/>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </ContentPage>
+    </MasterDetailPage.Master>
+</MasterDetailPage>

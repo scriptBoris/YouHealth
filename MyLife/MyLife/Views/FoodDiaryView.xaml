@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyLife.Views.FoodDiaryView"
+             xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms" 
+             xmlns:aiForms="clr-namespace:AiForms.Layouts;assembly=AiForms.Layouts"
+             
+             xmlns:vm="clr-namespace:MyLife.ViewModels"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             
+             Title="Дневник питания">
+    <!--For intelli sense-->
+    <!--<d:ContentPage.BindingContext>
+        <vm:FoodDiaryViewModel/>
+    </d:ContentPage.BindingContext>-->
+    
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Label Text="List:"/>
+                <aiForms:RepeatableWrapLayout 
+                    ItemsSource="{Binding Days}">
+                    <aiForms:RepeatableWrapLayout.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <Label Text="Hello"/>
+                                <aiForms:RepeatableWrapLayout 
+                                    ItemsSource="{Binding Tasks}">
+                                    <aiForms:RepeatableWrapLayout.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackLayout>
+                                                <microcharts:ChartView 
+                                                    IgnorePixelScaling="True"
+                                                    Chart="{Binding Chart}" 
+                                                    HeightRequest="300"
+                                                    WidthRequest="300"/>
+                                            </StackLayout>
+                                        </DataTemplate>
+                                    </aiForms:RepeatableWrapLayout.ItemTemplate>
+                                </aiForms:RepeatableWrapLayout>
+                            </StackLayout>
+
+                        </DataTemplate>
+                    </aiForms:RepeatableWrapLayout.ItemTemplate>
+                </aiForms:RepeatableWrapLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
